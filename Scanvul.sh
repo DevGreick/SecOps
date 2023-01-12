@@ -2,7 +2,7 @@
 
 # Script para buscar vulnerabilidades no site www.terra.com.br
 
-echo "Iniciando a busca por vulnerabilidades no site www.terra.com.br..."
+echo "Iniciando a busca por vulnerabilidades no site www.exemplo.com.br..."
 
 # Utilizando o comando nmap para verificar as portas abertas do site: 
 nmap -sV www.terra.com.br 
