@@ -33,7 +33,7 @@ def check_vulnerabilidade(url: str) -> None:
             if 'include' in tag.get('src', '') or 'require' in tag.get('src', ''):
                 print(f"Arquivo  vulneravel encontrado em: {tag}")
 
-        print("Site seguro.")
+        print("nao encontrado arquivos vulneraveis.")
     except Exception as e:
         print(f"Um erro ocorreu: {e}")
 
