@@ -43,4 +43,4 @@ def check_file_inclusion(text: str) -> None:
         raise ValueError("File inclusion vulnerability detected.")
 
 # Example usage
-check_vulnerabilities("http://www.terra.com")
+check_vulnerabilities("http://www.google.com")
