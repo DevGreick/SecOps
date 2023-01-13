@@ -2,17 +2,17 @@ import requests
 
 def check_vulnerabilities(url: str) -> None:
     """
-    Check for vulnerabilities in a website.
+    Verifica vulnerabilidades no website.
     """
     try:
-        # Send a GET request to the website.
+          # Envia um GET request para o website.
         response = requests.get(url)
 
-        # Check the response status code.
+         # Checa se a resposta e 200.
         if response.status_code != 200:
             raise ValueError(f"Invalid status code: {response.status_code}")
 
-        # Check for common vulnerabilities.
+        # Checa por vulnerabilidades comuns.
         check_xss(response.text)
         check_sql_injection(response.text)
         check_file_inclusion(response.text)
@@ -23,24 +23,24 @@ def check_vulnerabilities(url: str) -> None:
 
 def check_xss(text: str) -> None:
     """
-    Check for cross-site scripting (XSS) vulnerabilities.
+            # Busca vulnerabilidades cross-site scripting (XSS) .
     """
     if "<script>" in text or "<script" in text:
         raise ValueError("XSS vulnerability detected.")
 
 def check_sql_injection(text: str) -> None:
     """
-    Check for SQL injection vulnerabilities.
+     # Busca por SQL injection.
     """
     if "SELECT" in text or "UPDATE" in text or "DELETE" in text:
         raise ValueError("SQL injection vulnerability detected.")
 
 def check_file_inclusion(text: str) -> None:
     """
-    Check for file inclusion vulnerabilities.
+    # Busca  por arquivo vulneravel.
     """
     if "include(" in text or "require(" in text:
         raise ValueError("File inclusion vulnerability detected.")
 
-# Example usage
+# Exemplo de uso
 check_vulnerabilities("http://www.google.com")
