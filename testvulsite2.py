@@ -38,4 +38,4 @@ def check_vulnerabilidade(url: str) -> None:
         print(f"Um erro ocorreu: {e}")
 
 # Exemplo
-check_vulnerabilidade("http://www.terra.com.br")
+check_vulnerabilidade("https://www.terra.com")
